@@ -1,5 +1,6 @@
 <div>
- @foreach ($data as $data)
+    
+ @foreach ($data as $datas)
    <div class="todo mb-5 card px-5 py-6 bg-white  col-span-1  border-blue-500 border-t-2 hover:shadow shadow " wire:poll.1s>
      
       
@@ -14,7 +15,7 @@
                     
                         
                     
-                    <h3 class="text-lg text-semibold text-gray-800">{{$data->content}}</h3>
+                    <h3 class="text-lg text-semibold text-gray-800">{{$datas->content}}</h3>
 
                   
 
@@ -36,7 +37,7 @@
                     </div>
                     
                 </div>
-                <span class="text-xs text-gray-500">{{$data->created_at}} </span>
+                <span class="text-xs text-gray-500">{{$datas->created_at}} </span>
                 
                 <div class="mt-3 text-xs text-gray-700">
                     <!--                         
@@ -49,9 +50,11 @@
                 
                 
             </div>
-            <div class="my-2">
-              
-            </div>
+            
 @endforeach
+            <div class="my-2 bg-white p-4 rounded-lg shadow-lg">
+              {{ $data->links() }}
+            </div>
 </div>
+            
             
